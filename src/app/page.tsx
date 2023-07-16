@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './page.module.scss'
+import Options from './components/Options'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <h1>Bar Buddy</h1>
         <h2>We help you pick a cocktail tonight</h2>
       </section>
+      <Options/>
     </main>
   )
 }
