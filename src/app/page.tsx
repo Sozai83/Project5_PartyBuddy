@@ -1,21 +1,30 @@
+"use client"
+
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from './page.module.scss'
-import Options from './components/Options'
+import LoadingImage from './components/top/LoadingImage'
+import Options from './components/top/Options'
+
 
 export default function Home() {
+  const [pageLoaded, setPageLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (document.readyState === 'complete') {
+        setPageLoaded(true);
+      } else {
+        timer;
+      }
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [])
+
   return (
     <main className={styles.main}>
-      <section className={styles.logo}>
-        <Image 
-          src="/favicon.png"
-          width={500}
-          height={500}
-          alt="Party Buddy Logo"
-        />
-        <h1>Bar Buddy</h1>
-        <h2>We help you pick a cocktail tonight</h2>
-      </section>
-      <Options/>
+      {!pageLoaded && <LoadingImage />}
+      {pageLoaded && <Options />}
     </main>
   )
 }
