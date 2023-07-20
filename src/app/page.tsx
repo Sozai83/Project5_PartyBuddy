@@ -4,7 +4,9 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from './page.module.scss'
 import LoadingImage from './components/top/LoadingImage'
-import Lottery from './components/lottery/Lottery'
+import Lottery from './components/lottery/lottery/Lottery'
+import Header from './components/others/Header'
+import Footer from './components/others/Footer'
 
 
 export default function Home() {
@@ -24,7 +26,12 @@ export default function Home() {
   return (
     <main className={styles.main}>
       {!pageLoaded && <LoadingImage />}
-      {pageLoaded && <Lottery />}
+      {pageLoaded &&
+        <>
+          <Header />
+          <Lottery />
+          <Footer />
+        </>}
     </main>
   )
 }
