@@ -9,12 +9,18 @@ export default function Footer() {
     return (
         <section className={styles.footer}>
             <section className={styles.links}>
-                <Image
-                    src="/chikku_logo.png"
-                    width={180}
-                    height={160}
-                    alt="Chikku webdesign Logo"
-                />
+                <Link
+                    href="https://shiori-portfolio.vercel.app/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    <Image
+                        src="/chikku_logo.png"
+                        width={180}
+                        height={160}
+                        alt="Chikku webdesign Logo"
+                    />
+                </Link>
                 <Link
                     href="https://www.linkedin.com/in/shiori-chiku/"
                     rel="noopener noreferrer"

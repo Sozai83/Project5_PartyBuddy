@@ -8,8 +8,8 @@ export default function Lottery() {
             <figure>
                 <Image
                     src="/bartender.jpg"
-                    width={500}
-                    height={500}
+                    width={400}
+                    height={400}
                     alt="Party Buddy Logo"
                 />
                 <sup><a href="https://www.freepik.com/free-vector/cocktail-bartender-concept-illustration_25026369.htm#query=illustrations%20bartender&position=1&from_view=search&track=ais">Image by storyset</a> on Freepik</sup>
