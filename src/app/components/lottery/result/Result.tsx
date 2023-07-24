@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRotateRight } from '@fortawesome/free-solid-svg-icons'
 import styles from './Result.module.scss'
 import Image from 'next/image'
 
@@ -15,7 +17,12 @@ export default function Result() {
             <section className={styles.resultDesc}>
                 <h1>Cocktail Name</h1>
                 <p>Description</p>
-                <button className={styles.tryAgain}>See Recipe</button>
+                <section className={styles.buttons}>
+                    <button className={styles.seeRecipe}>See Recipe</button>
+                    <button className={styles.tryAgain}>
+                        <FontAwesomeIcon icon={faRotateRight} />
+                    </button>
+                </section>
             </section>
         </section>
     )

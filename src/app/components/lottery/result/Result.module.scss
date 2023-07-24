@@ -39,23 +39,44 @@
             font-size: 1em;
         }
 
-        button{
+        .buttons{
+            display: flex;
+            align-items: center;
             margin-top: 20px;
-            padding: 10px 30px;
-            border-radius: 10px;
-            background-color: #0006B1;
-            color: #CCD2FC;
-            border: #0006B1 solid 1px;
-            font-size: 1em;
-            font-weight: 800;
-            cursor:pointer;
+            justify-content: center;
 
-            &:hover{
-                color:#0006B1;
-                background-color: #CCD2FC;
+            .seeRecipe{
+                padding: 10px 30px;
                 border-radius: 10px;
-                border:#0006B1 solid 1px; 
+                background-color: #0006B1;
+                color: #CCD2FC;
+                border: #0006B1 solid 1px;
+                font-size: 1em;
+                font-weight: 800;
+                margin-right: 20px;
+                cursor:pointer;
+
+                &:hover{
+                    color:#0006B1;
+                    background-color: #CCD2FC;
+                    border-radius: 10px;
+                    border:#0006B1 solid 1px; 
+                }
             }
+
+            .tryAgain{
+                color: #0006B1;
+                background: none;
+                border: none;
+                font-size: 2em;
+                cursor:pointer;
+
+                &:hover{
+                    color:#CCD2FC;
+                }
+            }
+
+            
         }
     }
 }
