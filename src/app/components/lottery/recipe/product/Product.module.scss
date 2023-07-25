@@ -1,0 +1,21 @@
+.productsWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+
+    .productWrapper{
+        margin-right: 20px;
+        text-align: center;
+
+        h3{
+            font-size: 1em;
+            font-weight: 600;
+
+            span{
+                font-size: 0.8em;
+            }
+        }
+    }
+
+}

@@ -2,8 +2,9 @@ import styles from './Recipe.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRotateRight } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
+import Product from './product/Product'
 
-export default function Result() {
+export default function Recipe() {
     return (
         <section className={styles.recipeWrapper}>
             <section className={styles.top}>
@@ -55,8 +56,36 @@ export default function Result() {
                     <li>
                         step3
                     </li>
+                    <li>
+                        step1
+                    </li>
+                    <li>
+                        step2
+                    </li>
+                    <li>
+                        step3
+                    </li>
+                    <li>
+                        step1
+                    </li>
+                    <li>
+                        step2
+                    </li>
+                    <li>
+                        step3
+                    </li>
+                    <li>
+                        step1
+                    </li>
+                    <li>
+                        step2
+                    </li>
+                    <li>
+                        step3
+                    </li>
                 </ul>
             </section>
+            <Product />
         </section>
     )
 }
