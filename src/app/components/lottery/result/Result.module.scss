@@ -11,9 +11,13 @@
         -webkit-animation-name: wobble;
         animation-name: wobble;    
         -webkit-animation-duration: 0.8s;
+        animation-duration: 0.8s;
         -webkit-animation-iteration-count:   infinite;
+        animation-iteration-count:   infinite;
         -webkit-animation-timing-function:   linear;
+        animation-timing-function:   linear;
         -webkit-transform-origin:            50% 100%;
+        transform-origin:            50% 100%;
 
      @-webkit-keyframes wobble {
       0% {
