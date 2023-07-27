@@ -4,7 +4,14 @@ import styles from './Result.module.scss'
 import Image from 'next/image'
 import { useRef, useState } from 'react';
 
-export default function Result({ result, setResult }: any) {
+type Props = {
+    result: boolean | object;
+    setResult: any;
+}
+
+
+export default function Result(props: Props) {
+    const { result, setResult } = props;
     const drinkImg = result.strDrinkThumb || "/img/cocktail/sample_cocktail.jpg";
     const drinkName = result.strDrink || "Sample Cocktail";
     const [loading, setLoading] = useState('loading');

@@ -4,7 +4,12 @@ import { faRotateRight } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import Product from './product/Product'
 
-export default function Recipe({ result }: any) {
+interface props {
+    result: boolean | string | object;
+}
+
+export default function Recipe(props: props) {
+    const { result } = props;
     return (
         <section className={styles.recipeWrapper}>
             <section className={styles.top}>
