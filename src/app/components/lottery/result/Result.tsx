@@ -2,19 +2,35 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRotateRight } from '@fortawesome/free-solid-svg-icons'
 import styles from './Result.module.scss'
 import Image from 'next/image'
+import { useRef, useState } from 'react';
 
 export default function Result({ result, setResult }: any) {
     const drinkImg = result.strDrinkThumb || "/img/cocktail/sample_cocktail.jpg";
     const drinkName = result.strDrink || "Sample Cocktail";
+    const [loading, setLoading] = useState('loading');
+    const counter = useRef(0);
+    const imageLoaded = () => {
+        setTimeout(() => setLoading('loaded'), 800);
+    }
     const resetResult = () => setResult(false);
     return (
-        <section className={styles.resultWrapper}>
-            <figure className={styles.resultImg}>
+        <>
+            <figure
+                className={`${styles.loadingImg} ${styles[loading]}`}>
                 <Image
-                    src={drinkImg}
+                    src="/bartender.jpg"
                     width={400}
                     height={400}
-                    alt={drinkName}
+                    alt="Party Buddy Logo"
+                />
+            </figure>
+            <section className={`${styles.resultWrapper} ${styles[loading]}`}>
+                <figure
+                    className={styles.resultImg}>
+                    <img
+                        src={drinkImg}
+                        alt={drinkName}
+                        onLoad={imageLoaded}
                 />
             </figure>
             <section className={styles.resultDesc}>
@@ -27,5 +43,6 @@ export default function Result({ result, setResult }: any) {
                 </section>
             </section>
         </section>
+        </>
     )
 }
