@@ -5,11 +5,20 @@ import Image from 'next/image'
 import Product from './product/Product'
 
 interface props {
-    result: boolean | string | object;
+    result: {
+        strDrink: string;
+        strInstructions: string;
+    }
 }
 
 export default function Recipe(props: props) {
     const { result } = props;
+    const cocktailName = result.strDrink;
+    const cocktailRecipe = result.strInstructions;
+    const ingredients = () => {
+        result.filter(item => { item.contains("strIngredient") })
+    }
+
     return (
         <section className={styles.recipeWrapper}>
             <section className={styles.top}>
