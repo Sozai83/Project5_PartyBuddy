@@ -6,8 +6,8 @@ import { useRef, useState } from 'react';
 
 type Props = {
     result: {
-        strDrinkThumb: object;
-        strDrink: object;
+        strDrinkThumb: string;
+        strDrink: string;
     }
     setResult: any;
 }
