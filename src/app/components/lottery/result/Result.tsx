@@ -10,11 +10,12 @@ type Props = {
         strDrink: string;
     }
     setResult: any;
+    setShowRecipe: any;
 }
 
 
 export default function Result(props: Props) {
-    const { result, setResult } = props;
+    const { result, setResult, setShowRecipe } = props;
     const drinkImg = result.strDrinkThumb || "/img/cocktail/sample_cocktail.jpg";
     const drinkName = result.strDrink || "Sample Cocktail";
     const [loading, setLoading] = useState('loading');
@@ -23,6 +24,7 @@ export default function Result(props: Props) {
         setTimeout(() => setLoading('loaded'), 800);
     }
     const resetResult = () => setResult(false);
+    const showRecipe = () => setShowRecipe(true);
     return (
         <>
             <figure
@@ -46,7 +48,9 @@ export default function Result(props: Props) {
             <section className={styles.resultDesc}>
                 <h1>{drinkName}</h1>
                 <section className={styles.buttons}>
-                    <button className={styles.seeRecipe}>See Recipe</button>
+                        <button className={styles.seeRecipe} onClick={showRecipe}>
+                            See Recipe
+                        </button>
                     <button className={styles.tryAgain} onClick={resetResult}>
                         <FontAwesomeIcon icon={faRotateRight} />
                     </button>

@@ -11,7 +11,7 @@ export default function LotteryTop() {
     const [showRecipe, setShowRecipe] = useState(false);
 
     return (
-        result && !showRecipe ? <Result result={result} setResult={setResult} /> :
+        result && !showRecipe ? <Result result={result} setResult={setResult} setShowRecipe={setShowRecipe} /> :
             showRecipe ? <Recipe result={result} /> :
                 <Lottery setResult={setResult} />
     )
