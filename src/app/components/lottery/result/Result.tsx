@@ -5,7 +5,8 @@ import Image from 'next/image'
 import { useRef, useState } from 'react';
 
 type Props = {
-    result: {
+    result: boolean | string |
+    {
         strDrinkThumb: string;
         strDrink: string;
     }
