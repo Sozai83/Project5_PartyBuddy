@@ -29,7 +29,7 @@ export default function Recipe(props: props) {
     //Extract ingredients and the mesurements
     const ingredients = Object.keys(result)
         .filter((id: string) => id.includes("strIngredient"))
-        .reduce((cur: string, id: string | number) => { return Object.assign(cur, { [id]: result[id] }) }, {});
+        .reduce((cur: string, id: string | number) => { return Object.assign(cur, { [id]: result[id] }) }, "");
 
     const ingredientsHtml = Object.keys(ingredients).map((item: any) => {
         if (ingredients[item]) {
@@ -48,6 +48,7 @@ export default function Recipe(props: props) {
         <section className={styles.recipeWrapper}>
             <section className={styles.top}>
                 <h1>{cocktailName}</h1>
+                <span>{result.strAlcoholic == "Alcoholic" ? 'Alcoholic' : 'Non Alcohol'}</span>
             </section>
             <section className={styles.ingredients}>
                 <figure className={styles.resultImg}>
