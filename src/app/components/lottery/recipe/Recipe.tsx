@@ -25,7 +25,12 @@ export default function Recipe(props: props) {
 
     const recipeStepsHtml = recipeSteps.map((step: string, key: number) => {
         if (step.length > 0) {
-            return (<li key={key + 1}>Step {key + 1}: {step}</li>);
+            return (
+                <li key={key + 1}>
+                    <span className={styles.step}>Step {key + 1}:</span>
+                    <span className={styles.stepDesc}>{step}</span>
+                </li>
+            );
         }
     });
 
