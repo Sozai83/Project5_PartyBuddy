@@ -22,9 +22,12 @@ export default function Result(props: Props) {
     const [loading, setLoading] = useState('loading');
     const counter = useRef(0);
     const imageLoaded = () => {
-        setTimeout(() => setLoading('loaded'), 800);
+        setTimeout(() => setLoading('loaded'), 1000);
     }
-    const resetResult = () => setResult(false);
+    const resetResult = () => {
+        setResult(false);
+        setShowRecipe(false);
+    }
     const showRecipe = () => setShowRecipe(true);
     return (
         <>

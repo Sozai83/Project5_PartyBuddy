@@ -3,13 +3,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRotateRight } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import Product from './product/Product'
+import { pickCocktail } from '@/app/api/api'
 
 interface props {
-    result: any
+    result: any;
+    setResult: any;
+    setShowRecipe: any;
 }
 
 export default function Recipe(props: props) {
-    const { result } = props;
+    const { result, setResult, setShowRecipe } = props;
     const drinkImg = result?.strDrinkThumb || "/img/cocktail/sample_cocktail.jpg";
     const cocktailName = result?.strDrink || 'SAMPLE COCKTAIL NAME';
     const cocktailRecipe = result?.strInstructions || 'SAMPLE RECEPE';
@@ -24,7 +27,7 @@ export default function Recipe(props: props) {
         if (step.length > 0) {
             return (<li key={key + 1}>Step {key + 1}: {step}</li>);
         }
-    })
+    });
 
     //Extract ingredients and the mesurements
     const ingredients = Object.keys(result)
@@ -42,7 +45,12 @@ export default function Recipe(props: props) {
                 </tr>
             )
         }
-    })
+    });
+
+    const returnTop = () => {
+        pickCocktail(setResult);
+        setShowRecipe(false);
+    }
 
     return (
         <section className={styles.recipeWrapper}>
@@ -68,13 +76,14 @@ export default function Recipe(props: props) {
                     </table>
                 </section>
             </section>
-
-
             <section className={styles.recipe}>
                 <ul>
                     {recipeStepsHtml}
                 </ul>
             </section>
+            <button className={styles.returnTop} onClick={returnTop}>
+                Try again!
+            </button>
             <Product />
         </section>
     )
