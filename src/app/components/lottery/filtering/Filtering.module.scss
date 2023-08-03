@@ -1,0 +1,28 @@
+.filteringWrapper{
+    position: absolute;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(35,35,35,0.6);
+
+    form{
+        display: flex;
+        align-items: center;
+        align-self: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        background: white;
+        width: 50%;
+        max-width: 600px;
+        padding: 50px 20px;
+        border-radius: 10px;
+        position: absolute;
+        top: calc(50% - 25vh + 160px);
+        right: calc(50% - 300px);
+
+        .radio{
+            margin-right: 80px;
+
+        }
+    }
+}

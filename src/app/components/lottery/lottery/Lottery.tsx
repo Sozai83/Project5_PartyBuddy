@@ -1,8 +1,11 @@
 import { pickCocktail } from '@/app/api/api';
 import styles from './Lottery.module.scss'
 import Image from 'next/image'
+import { useState } from 'react';
+import Filtering from '../filtering/Filtering';
 
 export default function Lottery({ setResult }: any) {
+    const [filtering, setFiltering] = useState(true);
     return (
         <section className={styles.optionWrapper}>
             <h1>Let us decide what you're gonna have tonight!</h1>
@@ -19,6 +22,7 @@ export default function Lottery({ setResult }: any) {
                 <button className={styles.filtering}>Filtering</button>
                 <button className={styles.lottery} onClick={() => pickCocktail(setResult)}>Pick Cocktail</button>
             </section>
+            {filtering && <Filtering />}
         </section>
     )
 }
