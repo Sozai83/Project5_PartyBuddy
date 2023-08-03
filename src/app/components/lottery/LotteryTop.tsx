@@ -18,7 +18,8 @@ export default function LotteryTop() {
                 setShowRecipe={setShowRecipe}
             /> :
             showRecipe ?
-                <Recipe result={result}
+                <Recipe
+                    result={result}
                     setResult={setResult}
                     setShowRecipe={setShowRecipe}
                 /> :

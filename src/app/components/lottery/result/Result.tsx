@@ -4,12 +4,14 @@ import styles from './Result.module.scss'
 import Image from 'next/image'
 import { useRef, useState } from 'react';
 
-type Props = {
-    result: boolean | string |
-    {
-        strDrinkThumb: string;
-        strDrink: string;
-    }
+
+interface Obj {
+    strDrinkThumb: string;
+    strDrink: string;
+}
+
+interface Props {
+    result: Obj;
     setResult: any;
     setShowRecipe: any;
 }

@@ -5,13 +5,20 @@ import Image from 'next/image'
 import Product from './product/Product'
 import { pickCocktail } from '@/app/api/api'
 
-interface props {
-    result: any;
+interface Obj {
+    strDrinkThumb: string;
+    strDrink: string;
+    strInstructions: string;
+    strAlcoholic: string;
+}
+
+interface Props {
+    result: Obj;
     setResult: any;
     setShowRecipe: any;
 }
 
-export default function Recipe(props: props) {
+export default function Recipe(props: Props) {
     const { result, setResult, setShowRecipe } = props;
     const drinkImg = result?.strDrinkThumb || "/img/cocktail/sample_cocktail.jpg";
     const cocktailName = result?.strDrink || 'SAMPLE COCKTAIL NAME';
@@ -37,12 +44,12 @@ export default function Recipe(props: props) {
     //Extract ingredients and the mesurements
     const ingredients = Object.keys(result)
         .filter((id: string) => id.includes("strIngredient"))
-        .reduce((cur: string, id: string | number) => { return Object.assign(cur, { [id]: result[id] }) }, "");
+        .reduce((cur: string, id: string | number) => { return Object.assign(cur, { [id]: (result as any)[id] }) }, "");
 
     const ingredientsHtml = Object.keys(ingredients).map((item: any) => {
         if (ingredients[item]) {
             let ingredientsKey = 'strMeasure' + item.split("strIngredient")[1];
-            let amount = result[ingredientsKey];
+            let amount = (result as any)[ingredientsKey];
             return (
                 <tr>
                     <td>{ingredients[item]}</td>
