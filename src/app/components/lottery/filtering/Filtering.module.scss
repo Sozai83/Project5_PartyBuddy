@@ -18,10 +18,11 @@
         border-radius: 10px;
         position: absolute;
         top: calc(50% - 25vh + 160px);
-        right: calc(50% - 300px);
+        right: calc(50% - 25vw);
 
         .radio{
-            margin-right: 80px;
+            width: 120px;
+            padding-bottom: 10px;
             input{
                 margin-right: 10px;
             }
