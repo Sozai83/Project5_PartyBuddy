@@ -6,7 +6,7 @@ import Filtering from '../filtering/Filtering';
 import { NodeBuilderFlags } from 'typescript';
 
 export default function Lottery({ setResult }: any) {
-    const [filtering, setFiltering] = useState(true);
+    const [filtering, setFiltering] = useState(false);
     const [filteredAlcohol, setFilteredAlcohol] = useState(null);
     return (
         <section className={styles.optionWrapper}>
@@ -21,7 +21,10 @@ export default function Lottery({ setResult }: any) {
                 <sup><a href="https://www.freepik.com/free-vector/cocktail-bartender-concept-illustration_25026369.htm#query=illustrations%20bartender&position=1&from_view=search&track=ais">Image by storyset</a> on Freepik</sup>
             </figure>
             <section className={styles.buttons}>
-                <button className={styles.filtering}>Filtering</button>
+                <button className={styles.filtering}
+                    onClick={() => setFiltering(true)}>
+                    Filtering
+                </button>
                 <button className={styles.lottery}
                     onClick={() => filteredAlcohol ? getFilteredCocktail(filteredAlcohol, setResult) : pickCocktail(setResult)}>
                     Pick Cocktail

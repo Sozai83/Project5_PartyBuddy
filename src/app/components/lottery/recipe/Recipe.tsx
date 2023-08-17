@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRotateRight } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import Product from './product/Product'
-import { pickCocktail } from '@/app/api/api'
 
 interface Obj {
     strDrinkThumb: string;
@@ -60,7 +59,7 @@ export default function Recipe(props: Props) {
     });
 
     const returnTop = () => {
-        pickCocktail(setResult);
+        setResult(null);
         setShowRecipe(false);
     }
 
