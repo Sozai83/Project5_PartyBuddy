@@ -5,27 +5,32 @@
     height: 100vh;
     background: rgb(35,35,35,0.6);
 
-    form{
-        display: flex;
-        align-items: center;
-        align-self: center;
-        flex-wrap: wrap;
+    .inner{
+        position: absolute;
+        top: calc(50% - 25vh + 160px);
+        right: calc(50% - 25vw);
         margin: 0 auto;
         background: white;
         width: 50%;
         max-width: 600px;
         padding: 50px 20px;
         border-radius: 10px;
-        position: absolute;
-        top: calc(50% - 25vh + 160px);
-        right: calc(50% - 25vw);
 
-        .radio{
-            width: 120px;
-            padding-bottom: 10px;
-            input{
-                margin-right: 10px;
+        form{
+            display: flex;
+            align-items: center;
+            align-self: center;
+            flex-wrap: wrap;
+            
+            .radio{
+                width: 120px;
+                padding-bottom: 10px;
+                input{
+                    margin-right: 10px;
+                }
             }
         }
     }
+
+    
 }
