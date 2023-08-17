@@ -9,7 +9,7 @@ export default function Filtering({ setFilteredAlcohol, setFiltering }: any) {
             setFilteredAlcohol(filtering);
         }
     }
-    const clearFiltering = (e) => {
+    const clearFiltering = (e: any) => {
         e.preventDefault();
         const els = document.querySelectorAll("input[type='radio'][name=alcohol]");
         if (els) {
@@ -18,7 +18,7 @@ export default function Filtering({ setFilteredAlcohol, setFiltering }: any) {
         setFilteredAlcohol(null);
     }
 
-    const closeFiltering = (e) => {
+    const closeFiltering = (e: any) => {
         e.preventDefault();
         setFiltering(false);
     }
