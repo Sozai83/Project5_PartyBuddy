@@ -55,10 +55,13 @@ export default function Filtering({ setFilteredAlcohol, setFiltering }: any) {
                         <input type="radio" id="scotch" name="alcohol" value="Scotch" />
                         <label htmlFor="scotch">Scotch</label>
                     </div>
-                    <button onClick={clearFiltering}>Clear filtering</button>
+
                 </form>
+                <div className={styles.clearFiltering}>
+                    <button onClick={clearFiltering}>Clear filtering</button>  
+                </div>
                 <button className={styles.close}
-                    onClick={closeFiltering}>Close</button>
+                    onClick={closeFiltering}></button>
             </div>
 
         </section>
