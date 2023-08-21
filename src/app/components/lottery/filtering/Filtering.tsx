@@ -19,12 +19,18 @@ export default function Filtering({ setFilteredAlcohol, setFiltering }: any) {
     }
 
     const closeFiltering = (e: any) => {
-        e.preventDefault();
-        setFiltering(false);
+        if (e.target.id && (e.target.id == "filteringBg" || e.target.id == "closeFiltering")) {
+            e.preventDefault();
+            setFiltering(false);
+        }
     }
 
     return (
-        <section className={styles.filteringWrapper}>
+        <section
+            id="filteringBg"
+            className={styles.filteringWrapper}
+            onClick={closeFiltering}
+        >
             <div className={styles.inner}>
                 <form onChange={setSelectedAlcohol}>
                     <div className={styles.radio}>
@@ -60,8 +66,10 @@ export default function Filtering({ setFilteredAlcohol, setFiltering }: any) {
                 <div className={styles.clearFiltering}>
                     <button onClick={clearFiltering}>Clear filtering</button>  
                 </div>
-                <button className={styles.close}
-                    onClick={closeFiltering}></button>
+                <button
+                    id="closeFiltering"
+                    className={styles.close}
+                    onClick={closeFiltering}>x</button>
             </div>
 
         </section>
