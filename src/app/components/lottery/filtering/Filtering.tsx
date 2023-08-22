@@ -19,7 +19,7 @@ export default function Filtering({ setFilteredAlcohol, setFiltering }: any) {
     }
 
     const closeFiltering = (e: any) => {
-        if (e.target.id && (e.target.id == "filteringBg" || e.target.id == "closeFiltering")) {
+        if (e.target.id && (e.target.id == "filteringBg" || e.target.id == "closeFiltering" || e.target.id == 'closeFilteringOK')) {
             e.preventDefault();
             setFiltering(false);
         }
@@ -64,6 +64,7 @@ export default function Filtering({ setFilteredAlcohol, setFiltering }: any) {
 
                 </form>
                 <div className={styles.clearFiltering}>
+                    <button id="closeFilteringOK" onClick={closeFiltering}>OK</button>  
                     <button onClick={clearFiltering}>Clear filtering</button>  
                 </div>
                 <button
