@@ -95,7 +95,7 @@ export default function Recipe(props: Props) {
             <button className={styles.returnTop} onClick={returnTop}>
                 Try again!
             </button>
-            <Product />
+            {/* <Product /> */}
         </section>
     )
 }
