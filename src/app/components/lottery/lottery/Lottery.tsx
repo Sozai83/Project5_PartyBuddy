@@ -11,6 +11,8 @@ export default function Lottery({ setResult }: any) {
     return (
         <section className={styles.optionWrapper}>
             <h1>Let us decide what you're gonna have tonight!</h1>
+            {filteredAlcohol &&
+                <h2>Filtering with: {filteredAlcohol}</h2>}
             <figure>
                 <Image
                     src="/bartender.jpg"
