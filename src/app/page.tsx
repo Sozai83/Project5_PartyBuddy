@@ -25,12 +25,7 @@ export default function Home() {
   return (
     <main className={`${styles.main} ${!pageLoaded && styles.loading}`}>
       {!pageLoaded && <LoadingImage />}
-      {pageLoaded &&
-        <>
-        <Header />
-        <LotteryTop />
-        <Footer />
-        </>}
+      {pageLoaded && <LotteryTop />}
     </main>
   )
 }

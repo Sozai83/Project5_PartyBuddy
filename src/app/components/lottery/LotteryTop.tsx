@@ -3,6 +3,8 @@ import Lottery from './lottery/Lottery'
 import { useState } from 'react';
 import Result from './result/Result';
 import Recipe from './recipe/Recipe';
+import { Header } from '../others/Header';
+import { Footer } from '../others/Footer';
 
 
 export default function LotteryTop() {
@@ -11,7 +13,9 @@ export default function LotteryTop() {
     const [showRecipe, setShowRecipe] = useState(false);
 
     return (
-        result && !showRecipe ?
+        <>
+            <Header />
+            {result && !showRecipe ?
             <Result
                 result={result}
                 setResult={setResult}
@@ -23,6 +27,8 @@ export default function LotteryTop() {
                     setResult={setResult}
                     setShowRecipe={setShowRecipe}
                 /> :
-                <Lottery setResult={setResult} />
+                    <Lottery setResult={setResult} />}
+            <Footer />
+        </>
     )
 }
