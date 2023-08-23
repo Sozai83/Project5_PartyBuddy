@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faSquareGithub } from '@fortawesome/free-brands-svg-icons'
 
-export default function Footer() {
+export function Footer() {
     return (
         <section className={styles.footer}>
             <section className={styles.links}>

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from './Header.module.scss'
 
-export default function Header() {
+export function Header() {
     return (
         <section className={styles.header}>
             <Image
