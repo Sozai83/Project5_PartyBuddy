@@ -12,16 +12,16 @@ interface Obj {
 }
 
 interface Props {
-    result: Obj;
+    result: Obj | boolean;
     setResult: any;
     setShowRecipe: any;
 }
 
 export default function Recipe(props: Props) {
     const { result, setResult, setShowRecipe } = props;
-    const drinkImg = result?.strDrinkThumb || "/img/cocktail/sample_cocktail.jpg";
-    const cocktailName = result?.strDrink || 'SAMPLE COCKTAIL NAME';
-    const cocktailRecipe = result?.strInstructions || 'SAMPLE RECEPE';
+    const drinkImg = (result as Obj)?.strDrinkThumb || "/img/cocktail/sample_cocktail.jpg";
+    const cocktailName = (result as Obj)?.strDrink || 'SAMPLE COCKTAIL NAME';
+    const cocktailRecipe = (result as Obj)?.strInstructions || 'SAMPLE RECEPE';
 
     //Split recipe into array > jsx
     const recipeSteps = cocktailRecipe
@@ -67,7 +67,7 @@ export default function Recipe(props: Props) {
         <section className={styles.recipeWrapper}>
             <section className={styles.top}>
                 <h1>{cocktailName}</h1>
-                <span>{result.strAlcoholic == "Alcoholic" ? 'Alcoholic' : 'Non Alcohol'}</span>
+                <span>{(result as Obj).strAlcoholic == "Alcoholic" ? 'Alcoholic' : 'Non Alcohol'}</span>
             </section>
             <section className={styles.ingredients}>
                 <figure className={styles.resultImg}>

@@ -11,7 +11,7 @@ interface Obj {
 }
 
 interface Props {
-    result: Obj;
+    result: Obj | boolean;
     setResult: any;
     setShowRecipe: any;
 }
@@ -19,8 +19,8 @@ interface Props {
 
 export default function Result(props: Props) {
     const { result, setResult, setShowRecipe } = props;
-    const drinkImg = result.strDrinkThumb || "/img/cocktail/sample_cocktail.jpg";
-    const drinkName = result.strDrink || "Sample Cocktail";
+    const drinkImg = (result as Obj).strDrinkThumb || "/img/cocktail/sample_cocktail.jpg";
+    const drinkName = (result as Obj).strDrink || "Sample Cocktail";
     const [loading, setLoading] = useState('loading');
     const counter = useRef(0);
     const imageLoaded = () => {
