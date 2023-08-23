@@ -2,8 +2,8 @@ import Lottery from './lottery/Lottery'
 import { useState } from 'react';
 import Result from './result/Result';
 import Recipe from './recipe/Recipe';
-import { Header } from '../others/Header';
-import { Footer } from '../others/Footer';
+import { Header } from '../headerFooter/Header';
+import { Footer } from '../headerFooter/Footer';
 
 
 export default function LotteryTop() {
