@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Lottery from './lottery/Lottery'
 import { useState } from 'react';
 import Result from './result/Result';
