@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import styles from './page.module.scss'
 import LoadingImage from './components/top/LoadingImage'
 import Header from './components/others/Header'

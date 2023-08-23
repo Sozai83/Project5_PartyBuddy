@@ -5,7 +5,7 @@ export default function Filtering({ setFilteredAlcohol, setFiltering }: any) {
     const setSelectedAlcohol = () => {
         const selectedEl = document.querySelector("input[type='radio'][name=alcohol]:checked");
         if (selectedEl) {
-            const filtering = selectedEl.value;
+            const filtering = selectedEl?.value;
             setFilteredAlcohol(filtering);
         }
     }
@@ -13,7 +13,7 @@ export default function Filtering({ setFilteredAlcohol, setFiltering }: any) {
         e.preventDefault();
         const els = document.querySelectorAll("input[type='radio'][name=alcohol]");
         if (els) {
-            els.forEach(el => el.checked = false);
+            els.forEach(el => el?.checked = false);
         }
         setFilteredAlcohol(null);
     }
