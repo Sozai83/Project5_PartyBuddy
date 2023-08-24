@@ -19,6 +19,12 @@
         -webkit-transform-origin:            50% 100%;
         transform-origin:            50% 100%;
 
+        @media only screen and (max-width: 540px) {
+          width: 260px;
+          height: 260px;
+        }
+
+
      @-webkit-keyframes wobble {
       0% {
         -webkit-transform: none;
@@ -123,6 +129,13 @@
             height: 400px;
             border-radius: 50%;
             box-shadow: 40px 25px 0 0 rgb(0, 6, 177, 0.3);
+
+            @media only screen and (max-width: 540px) {
+              width: 260px;
+              height: 260px;
+              box-shadow: 20px 12px 0 0 rgb(0, 6, 177, 0.3);
+            }
+    
         }
 
         sup{
@@ -140,8 +153,17 @@
         width: 500px;
         margin: 60px auto;
 
+        @media only screen and (max-width: 540px) {
+          width: 280px;
+      }
+
         h1{
             font-size: 1.6em;
+            @media only screen and (max-width: 540px) {
+              font-size: 1.4em;
+              font-weight: 700;
+              max-width: 280px;
+          }
         }
 
         p{
@@ -165,6 +187,11 @@
                 margin-right: 20px;
                 cursor:pointer;
 
+                @media only screen and (max-width: 540px) {
+                  font-weight: 700;
+                  padding: 6px 20px;
+              }
+
                 &:hover{
                     color:#0006B1;
                     background-color: #CCD2FC;
@@ -179,6 +206,10 @@
                 border: none;
                 font-size: 2em;
                 cursor:pointer;
+
+                @media only screen and (max-width: 540px) {
+                  font-size: 1.6em;
+              }
 
                 &:hover{
                     color:#CCD2FC;
