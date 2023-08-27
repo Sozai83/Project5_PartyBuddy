@@ -10,7 +10,7 @@ export default function LoadingImage() {
         height={400}
         alt="Party Buddy Logo"
       />
-      <h1>Bar Buddy</h1>
+      <h1>Party Buddy</h1>
       <h2>We help you pick a cocktail tonight</h2>
     </section>
   )
